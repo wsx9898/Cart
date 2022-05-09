@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<style>
+    button {
+        display: block;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <div id="hero">
+        Main section
+        <button id="add_btn">Add one more button</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        jQuery(document).ready(($) => {
+            $("#add_btn").click(() => {
+                $("div#hero").append(`<button id="add_more_buttons">add button clicked</button>`);
+            });
+            $("body").on('click', '#add_more_buttons', () => {
+                console.log('This is automatic populated button');
+                $("div#hero").append(`<button id="add_more_buttons">add button clicked</button>`);
+            });
+        });
+    </script>
+</body>
+
+</html>
